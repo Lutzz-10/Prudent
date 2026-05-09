@@ -112,6 +112,58 @@
         .animate-delay-2 { animation-delay: 0.2s; opacity: 0; }
         .animate-delay-3 { animation-delay: 0.3s; opacity: 0; }
         .animate-delay-4 { animation-delay: 0.4s; opacity: 0; }
+
+        /* Desktop auth layout */
+    @media (min-width: 768px) {
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100dvh;
+            padding: 40px 20px;
+        }
+
+        /* Decorative left panel */
+        .auth-split {
+            display: flex;
+            width: 100%;
+            max-width: 900px;
+            min-height: 580px;
+            border-radius: 28px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+        }
+
+        .auth-left {
+            display: flex !important;
+            flex: 1;
+            background: var(--bg-card);
+            padding: 48px;
+            flex-direction: column;
+            justify-content: space-between;
+            border-right: 1px solid var(--border);
+        }
+
+        .auth-right {
+            width: 420px;
+            flex-shrink: 0;
+            background: var(--bg-dark);
+            padding: 48px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .auth-split {
+            display: block;
+            width: 100%;
+        }
+        .auth-left { display: none !important; }
+        .auth-right { padding: 0; background: transparent; }
+    }
     </style>
 </head>
 <body class="flex flex-col items-center justify-center px-5 py-10 relative z-10">
